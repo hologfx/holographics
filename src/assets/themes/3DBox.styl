@@ -1,0 +1,43 @@
+// NAME="3D Box"
+// DESCRIPTION="Is like the 3D theme, but the widget box is 3D."
+
+body, html{
+	font-family: 'Karla';
+	font-style: normal;
+	font-weight: 700;
+
+	// Sets the text-color to the intended
+	// text_a value
+	color: $text_a;
+}
+
+// i stands for Icons, this gives them some
+// additional spacing.
+i {
+	margin-right: 1vw;
+}
+
+// H2 is the text we use for important text
+h2 {
+	text-shadow: 1px 1px 0 $primary_color;
+}
+
+.widget {
+	// Sets the background to the intended
+	// background_a value
+	background: $background_a;
+	
+	border-top: 2px solid $primary_color;
+	border-bottom: 2px solid $primary_color;
+	
+	// Adding a box-shadow to the widget gives it
+	// some depth. Learn about box-shadows here:
+	// https://css-tricks.com/almanac/properties/b/box-shadow/
+  box-shadow:
+  	1px 1px 0px darken($primary_color, 40%),
+  	2px 2px 0px darken($primary_color, 40%),
+  	3px 3px 0px darken($primary_color, 40%),
+  	4px 4px 0px darken($primary_color, 40%),
+  	6px 6px 10px rgba(0,0,0,.5),
+  	6px 6px 30px rgba(0,0,0,.5);
+}

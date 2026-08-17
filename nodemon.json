@@ -1,0 +1,12 @@
+{
+  "ignore": [
+    "db.json",
+    "*.pug",
+    "*.scss",
+    "/src/client/*",
+    "/user_data/*",
+    "/dist/*"
+  ],
+  "verbose": false,
+  "delay": "500ms"
+}

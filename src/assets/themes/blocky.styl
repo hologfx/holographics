@@ -1,0 +1,34 @@
+// NAME="Blocky"
+// DESCRIPTION="This theme gives every element in a widget it's own box, making it, well, blocky."
+
+body, html{
+  font-family: 'Quicksand';
+  font-style: normal;
+	font-weight: 400;
+	color: $text_a;
+}
+
+h2,span,p,i {
+  margin: .5vw 0;
+  display: block;
+  padding: "%svh %svw" % ($widget_padding $widget_padding);
+  background: $background_a;
+}
+
+
+h2 {
+	// Headers utilize a background gradient with primary and secondary colors.
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+
+  color: $text_b;
+  background-image: linear-gradient(to right, $primary_color, $secondary_color);
+}
+
+.widget {
+  // Override widget padding, it's not needed
+  // This is the main widget box, which we now don't see
+  padding: 0 !important;
+  margin: 0 !important;
+}

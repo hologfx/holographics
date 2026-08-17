@@ -1,0 +1,11 @@
+.ticker(ref="ticker")
+	div#template
+		ul#items(ref="template")
+			li.ticker-item(v-for="entry in entries" v-if="isVisibleEntry(entry, visibleEntries)")
+				Icon(:icon="entry.props.icon" v-if="entry.props.icon")
+				h2(v-html="entry.props.text")
+	div#clones
+		ul#items(ref="clones")
+			li.ticker-item(v-for="clone in clones")
+				Icon(:icon="clone.props.icon" v-if="clone.props.icon")
+				h2(v-html="clone.props.text")

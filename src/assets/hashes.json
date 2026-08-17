@@ -1,0 +1,582 @@
+[
+	{
+		"file": "widgets/BroadcastMessage",
+		"md5": "29c872f61f354a26372f19fd40a720a5",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/Clock",
+		"md5": "21ef55f1c8d85725539cf68684f6c61d",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/Countdown",
+		"md5": "12992950cb16abfcfcb5672441681f56",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/Image",
+		"md5": "b1355876ef6dac2bb79c95bfcd3e40b1",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/LowerThird",
+		"md5": "cae9385d49d29dcae3f1b2037c5d23c5",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/Particles",
+		"md5": "bd3e0d86dfef33c31ed2facfb3010a36",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "fd84b521c39319687b0e8b44bc83d612",
+		"version": "1.0.0"
+	},
+	{
+		"file": "widgets/YouTube",
+		"md5": "759ce7e26459e52b2a52b45d4fc5f157",
+		"version": "1.0.0"
+	},
+	{
+		"file": "themes/3D.styl",
+		"md5": "726289e5b05dce0c02f2e6c313303b12",
+		"version": "1.0.0"
+	},
+	{
+		"file": "themes/blocky.styl",
+		"md5": "11f18c2780aca8aafdb99946947a2c5b",
+		"version": "1.0.0"
+	},
+	{
+		"file": "themes/gradient.styl",
+		"md5": "9f16b7ef0e16b5b3c559e26250b10e99",
+		"version": "1.0.0"
+	},
+	{
+		"file": "themes/terminal.styl",
+		"md5": "397d852fa1e0d536ccef10aa1c9f4092",
+		"version": "1.0.0"
+	},
+	{
+		"file": "mediafiles/holographics_logo.png",
+		"md5": "acadff60382436fc869b77bf050a978b",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/3D.styl",
+		"md5": "d7bddcf5930a7c69438a9f79e819df59",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/blocky.styl",
+		"md5": "3ef9397e9e5688785e03da13f6594e51",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/clean.styl",
+		"md5": "4d836aa4b90bb3979d22706d80aba519",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/default.styl",
+		"md5": "6d3179bd9d49aa85170ee22aa1faa8ee",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/edge.styl",
+		"md5": "b1425e0c9b05410691944ebbe95710f7",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/glowy.styl",
+		"md5": "2997e326c586e4265f9b86376b1fe52b",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/gradient.styl",
+		"md5": "6dce544702a8328ac7d52bdf10abf1d8",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/outlined.styl",
+		"md5": "06fa5a027b6ece72ff14db2f4073ff44",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/radiant.styl",
+		"md5": "ad2ada59884d175c1738010c0279253b",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/terminal.styl",
+		"md5": "b0758520377cd4a2a52222a6c1d560b6",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/fade.js",
+		"md5": "5904f32801541d390d6b7f83aaf36c5d",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/rotateDown.js",
+		"md5": "47b199d9314b913305b34f485159c398",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/rotateUp.js",
+		"md5": "b7a9c06fed64fb7059dc7420004aac83",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/slideDown.js",
+		"md5": "b0ccd5056b656f65200832b10146067c",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/slideLeft.js",
+		"md5": "1a869b43fd9be1ada6e4aa039b278b4e",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/slideRight.js",
+		"md5": "24f54a92720191e9cec2b8db5e0e5986",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/slideUp.js",
+		"md5": "d7c9a3bf24593c795f9382435c64e071",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/xSlideToEdge.js",
+		"md5": "674619870b4ae1f7e3f6e8639e37323e",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/ySlideToEdge.js",
+		"md5": "73215caa17164f2fc2cdaa3782246c75",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/zoomIn.js",
+		"md5": "ff88966ddbeb38d4a1b2ef2f1241868d",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "animations/zoomOut.js",
+		"md5": "4038d8a6c13fd1e547b8b3decc757c73",
+		"version": "1.2.4-alpha.0"
+	},
+	{
+		"file": "themes/3D.styl",
+		"md5": "448f6fa1d21b04f96b14eea01523a965",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/3DBox.styl",
+		"md5": "98dedf10d8f72c9443c1b7098caa96a6",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/blocky.styl",
+		"md5": "6dc21bd3674073be47aea6504079e6bf",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/clean.styl",
+		"md5": "f0ef5df1df59f9394e51ea9a6b67629a",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/default.styl",
+		"md5": "fdb4da3853b36bfc64804f32f0cb3a81",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/edge.styl",
+		"md5": "66c64bdf247267d43925597a0ffc034a",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/glowy.styl",
+		"md5": "54a50b464f72f7fe849eb5f2b214bd3c",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/gradient.styl",
+		"md5": "63be944e4475dbc9f9eed35e050bde96",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/gradientborder.styl",
+		"md5": "4caed3f0885eba39d94b30330d106add",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/hot.styl",
+		"md5": "e283978a6c10c153c0b8ba395b2ff09d",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/outlined.styl",
+		"md5": "90d5e7e290f5edeeee446ec77918396c",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/radiant.styl",
+		"md5": "29c8e27f1296c99370871866b646faec",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "themes/terminal.styl",
+		"md5": "5dc1cbe5a19be3539fa20036ff9480ea",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/BroadcastMessage",
+		"md5": "4cc53bcefed78610b3356d201f6a10b4",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Clock",
+		"md5": "dac06fb493adca6d06cb159deafaa9ad",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Countdown",
+		"md5": "b9dce4b6cb284786308ed7f55af6bfa3",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Image",
+		"md5": "354e5a7ba08be2459387215bac71f661",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/LowerThird",
+		"md5": "da9c33fe6e6d34c01e76a7a34ebf356c",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Particles",
+		"md5": "4f301fc14b397bf5a1f3307b7033813d",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Readme.md",
+		"md5": "116551ae4cd52dac333719a34f2f0024",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "9cf7c0d6435ee0cd30d83a00ce5f08de",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/YouTube",
+		"md5": "f3ca6818b41b4fd2682c115e5b6c1b93",
+		"version": "1.3.0-beta.0"
+	},
+	{
+		"file": "widgets/FullPage",
+		"md5": "56392f1fa6992cbdd97fb0fed67a41b1",
+		"version": "1.4.1"
+	},
+	{
+		"file": "widgets/FullPage",
+		"md5": "53e24e66ac0589b6da07814e7b75aab9",
+		"version": "1.4.1"
+	},
+	{
+		"file": "widgets/TestPattern",
+		"md5": "22bdff826f944edcdebbb29f6379bce9",
+		"version": "1.5.3"
+	},
+	{
+		"file": "widgets/Video",
+		"md5": "93fc1090e5d9eca9842c453bb1f4abe8",
+		"version": "1.5.3"
+	},
+	{
+		"file": "mediafiles/EBU_Colorbars.svg",
+		"md5": "5186feab5fbd0fda19d9e7356a8c3298",
+		"version": "1.5.3"
+	},
+	{
+		"file": "mediafiles/PM5644.svg",
+		"md5": "56fdc8da21cf5cb18d8de1c624269ed3",
+		"version": "1.5.3"
+	},
+	{
+		"file": "mediafiles/SMPTE-169.svg",
+		"md5": "865100305923ce5d4411bd35e98f410e",
+		"version": "1.5.3"
+	},
+	{
+		"file": "mediafiles/SMPTE-43.svg",
+		"md5": "23e0db093aabd1c22762f4928c09ac26",
+		"version": "1.5.3"
+	},
+	{
+		"file": "widgets/BroadcastMessage",
+		"md5": "43946a1c4838db4bf53f0d9c3d548e7d",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Clock",
+		"md5": "edf7cf3bc7661298bc322d17074ec6de",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Countdown",
+		"md5": "28047975b27f32228af4874cac5c2a4e",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/FullPage",
+		"md5": "a7bb939ece33992da7e9b0860d54c1ed",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Image",
+		"md5": "c2cd56fbe533c13a40d9020d835689da",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/LowerThird",
+		"md5": "793b7af08b522a834dc4e454cade8a62",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Particles",
+		"md5": "bfbdc289b72bf05e4c7d5944831c6568",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/TestPattern",
+		"md5": "e4a64eaed58f2897a8394d5bd655a6dc",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "3d225c4534d9b2e7dcfab9474ee06c89",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/Video",
+		"md5": "9c1d0363a768fe5fa3234a8a01128bc1",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/YouTube",
+		"md5": "0bc747101f0d037c0c10f2a514c1dfc8",
+		"version": "1.6.0-alpha.0"
+	},
+	{
+		"file": "widgets/TestPattern",
+		"md5": "8ef1bc66e74c1a590b580b3c7401c800",
+		"version": "1.6.0"
+	},
+	{
+		"file": "widgets/LowerThird",
+		"md5": "14e3847e6cdc5d6505d16df7dba4e5c3",
+		"version": "1.6.2"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "40fc6c6e90b05d0729b3eee2aa65b472",
+		"version": "1.6.2"
+	},
+	{
+		"file": "widgets/BroadcastMessage",
+		"md5": "5700da52ef4a56b4193cde0467765be0",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Clock",
+		"md5": "2b3d406a3e73c20f7e61a3ec9bfd5ad1",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Confetti",
+		"md5": "22ceb61834630f7d752bd6861a4e3b13",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Countdown",
+		"md5": "3ae76e2abe5b871ff361c0a0caf08478",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/FullPage",
+		"md5": "27a10f7a1951a40c13ddd05b8bc4c827",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Gradient",
+		"md5": "f12952dd6ae08d2516e3ce41c7b4ce69",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Hexagons",
+		"md5": "914d7a420de29816fc3a760f313241a0",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Image",
+		"md5": "d00518f57f0705045add145a93cbc0f4",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/LowerThird",
+		"md5": "718f3eaa720efe8e07287cc5cf345737",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/MovingGradient",
+		"md5": "859655dbe581007cc0350de66ef3e233",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Particles",
+		"md5": "424f6c68ba76a104182b67b755c71244",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/SolidColor",
+		"md5": "435958387fc1eb468c130c43c821c26d",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/TestPattern",
+		"md5": "78b5e17157d4130af321dfd1d45d5840",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "8b96a97cbcc03153474ccc37ccdc0b89",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Video",
+		"md5": "d13927aae375efe0886e2932f2521208",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/YouTube",
+		"md5": "c07f24370ce984e54f680adf82c16602",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/fade.js",
+		"md5": "4f43245958e3b860f5a58c2858a66316",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/rotateDown.js",
+		"md5": "90577f5f29441560ea9851ffff41ec45",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/rotateUp.js",
+		"md5": "5e056586eae9f18b208d38bcde75994c",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideDown.js",
+		"md5": "938d1d0138587420edf9b711cedfce0a",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideLeft.js",
+		"md5": "b8c5a4a310535ba7f2733f557d8d5a66",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideLetters.js",
+		"md5": "1cdea52e18b75676a74d6abd4054ca86",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideRight.js",
+		"md5": "f3d965d84eb91dba2fe824e1b6f978a1",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideUp.js",
+		"md5": "3eff7e79806b1e33082528330fda3d0d",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/staggerRight.js",
+		"md5": "1dadb240c8311502526139e04c58c52f",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/textDecode.js",
+		"md5": "39e8806f3322de30d440fe864327bfcc",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/textDecodeRandom.js",
+		"md5": "a6739a09227e5a47afd40547b5fed2d7",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/zoomIn.js",
+		"md5": "642c7508a7dc8d13410d4894fab24499",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/zoomOut.js",
+		"md5": "a5bb438b2ab4652cfe1e60721c814242",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Clock",
+		"md5": "b6571c1c9c8703c2b4169bd2965640a2",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Confetti",
+		"md5": "e3f076af19e4b498c6cbd6291193dde3",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Countdown",
+		"md5": "e71b165bff904b43511a77549961ca66",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Hexagons",
+		"md5": "f588bf63a73656c86305c498969916b3",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Schedule",
+		"md5": "94c44356dd9075311b6c804add09e0a5",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Timeline",
+		"md5": "7f1192002cfdbc66317acef9cdc360cf",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Windows95LowerThird",
+		"md5": "6f7610d99f98f77385be88c3f5d6eedd",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "animations/slideLeft.js",
+		"md5": "075653e14eae92ac23196aa8df00214e",
+		"version": "1.11.0-beta.0"
+	},
+	{
+		"file": "widgets/Ticker",
+		"md5": "8ca4217ed3b99547ea2af8158cf13448",
+		"version": "1.11.0-beta.0"
+	}
+]

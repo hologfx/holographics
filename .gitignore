@@ -1,0 +1,20 @@
+node_modules
+coverage
+.env
+*.ds_store
+.DS_Store
+.npmrc
+.sentryclirc
+sentry.properties
+npm-debug.log
+dist/*
+src/client/dist
+src/server/dist
+user_data/*
+!user_data/.gitkeep 
+yarn-error.log
+build/release-notes.md
+db.json
+builds/*
+# Azure Trusted Signing local key material
+azure-signing.*

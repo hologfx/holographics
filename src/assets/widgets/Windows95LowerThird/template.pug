@@ -1,0 +1,23 @@
+.windows95LowerThird
+	span#titlebar(:class="notResponding ? 'notResponding' : ''") {{ titleBar }}
+	#columns
+		#column1
+			#icon
+				.pixels
+		#column2
+			span Please confirm relevant speaker information
+			br
+			br
+			br
+			span.info <u>N</u>ame
+			span#name(v-html="visibleEntry.props.name")
+			span.info <u>J</u>ob title:
+			span#job_title(v-html="visibleEntry.props.job_title")
+			span.info <u>C</u>ompany:
+			span#company(v-html="visibleEntry.props.company")
+		#column3
+			#buttonerators
+				input(type="submit" value="OK")
+				br
+				br
+				input(type="button" value="Cancel")

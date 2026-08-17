@@ -1,0 +1,92 @@
+name: Build/release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js and NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Webpack
+        run: npm run build:webpack
+
+      - name: Tests
+        run: npm test
+
+      - name: Prepare for app notarization
+        if: startsWith(matrix.os, 'macos')
+        # Import Apple API key for app notarization on macOS (skipped if secrets are absent)
+        run: |
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.api_key }}' > ~/private_keys/AuthKey_${{ secrets.api_key_id }}.p8
+          echo "APPLE_API_KEY=$HOME/private_keys/AuthKey_${{ secrets.api_key_id }}.p8" >> "$GITHUB_ENV"
+
+      - name: Prepare Azure Trusted Signing (cert + module)
+        if: startsWith(matrix.os, 'windows')
+        shell: pwsh
+        run: |
+          # Materialize the PEM (cert + key) that Azure EnvironmentCredential authenticates with.
+          # Written as a Windows path so the .NET-based TrustedSigning module can read it.
+          $pem = "$env:RUNNER_TEMP\azure-signing.pem"
+          [IO.File]::WriteAllBytes($pem, [Convert]::FromBase64String("${{ secrets.AZURE_CLIENT_CERT_PEM }}"))
+          "AZURE_CLIENT_CERTIFICATE_PATH=$pem" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+          # Pre-install the TrustedSigning module: electron-builder's own install is flaky on the
+          # runner, leaving Invoke-TrustedSigning missing (electron-builder#8828). Use PSResourceGet
+          # (bundled with pwsh 7.4+) to avoid the legacy NuGet-provider bootstrap, which fails here
+          # with "No match was found for the provider 'NuGet'". Installs to the CurrentUser module
+          # path that electron-builder's own `pwsh -Command Invoke-TrustedSigning` autoloads from.
+          Install-PSResource -Name TrustedSigning -Repository PSGallery -TrustRepository
+
+          # electron-builder's initialize() unconditionally re-runs Install-Module, which dies on
+          # the same broken NuGet-provider bootstrap. Patch it to import the module installed above
+          # instead. Drop this once electron-builder ships the signtool /dlib path (post-26.15.x).
+          $f = "node_modules/app-builder-lib/out/codeSign/windowsSignAzureManager.js"
+          $installProvider = 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force -Scope CurrentUser'
+          $installModule = 'Install-Module -Name TrustedSigning -MinimumVersion 0.5.0 -Force -Repository PSGallery -Scope CurrentUser'
+          $src = Get-Content $f -Raw
+          if (-not ($src.Contains($installProvider) -and $src.Contains($installModule))) {
+            throw "electron-builder patch no longer matches; check windowsSignAzureManager.js"
+          }
+          $src.Replace($installProvider, 'exit 0').Replace($installModule, 'Import-Module TrustedSigning -ErrorAction Stop') | Set-Content $f
+
+      - name: Build/release Electron app
+        # Build for the current runner's platform and, for v-tags, publish to GitHub
+        # Releases. electron-builder reads the signing certs from CSC_LINK/CSC_KEY_PASSWORD
+        # (base64 .p12) and notarizes natively via its built-in notarytool integration,
+        # which expects APPLE_API_KEY (p8 path), APPLE_API_KEY_ID and APPLE_API_ISSUER.
+        # (Replaces samuelmeuli/action-electron-builder, which ran on the removed node12 runtime.)
+        run: npx electron-builder --publish ${{ startsWith(github.ref, 'refs/tags/v') && 'always' || 'never' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # macOS signs from a .p12 (CSC_LINK); Windows signs via Azure Trusted Signing (AZURE_* below).
+          CSC_LINK: ${{ runner.os == 'macOS' && secrets.MAC_CERTS || '' }}
+          CSC_KEY_PASSWORD: ${{ runner.os == 'macOS' && secrets.MAC_CERTS_PASSWORD || '' }}
+          APPLE_API_KEY_ID: ${{ secrets.api_key_id }}
+          APPLE_API_ISSUER: ${{ secrets.api_key_issuer_id }}
+          APPLE_TEAM_ID: ${{ secrets.apple_team_id }}
+          # AZURE_CLIENT_CERTIFICATE_PATH is exported by the prepare step above (Windows only).
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          # Interim S3 dual-publish so existing (S3-era) installs keep auto-updating during the
+          # migration to GitHub Releases. Remove once all installs are on the GitHub feed.
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

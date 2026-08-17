@@ -1,0 +1,6 @@
+.fullscreen_message(:style="style")
+	.textpart
+		h2(v-html="visibleEntry.props.message")
+		p(v-html="visibleEntry.props.message2")
+	.imagepart
+		img(:src="imageUrl")

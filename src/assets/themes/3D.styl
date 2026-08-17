@@ -1,0 +1,62 @@
+// NAME="3D"
+// DESCRIPTION="This theme uses shadows to fake a 3D effect. Note: works much better with large text."
+
+emboss($color, $depth) {
+	text-shadow: 
+		0 ($depth * 0.01em) ($depth * 0.01em) lighten($color, 15%),
+    
+		0 ($depth * 0.01em) ($depth * 0.00em) darken($color, 10%),
+		0 ($depth * 0.02em) ($depth * 0.00em) darken($color, 11%),
+		0 ($depth * 0.03em) ($depth * 0.01em) darken($color, 12%),
+		0 ($depth * 0.04em) ($depth * 0.02em) darken($color, 13%),
+		0 ($depth * 0.05em) ($depth * 0.03em) darken($color, 14%),
+		0 ($depth * 0.06em) ($depth * 0.03em) darken($color, 15%),
+		0 ($depth * 0.07em) ($depth * 0.02em) darken($color, 16%),
+		0 ($depth * 0.08em) ($depth * 0.01em) darken($color, 17%),
+		0 ($depth * 0.09em) ($depth * 0.00em) darken($color, 18%),
+		0 ($depth * 0.10em) ($depth * 0.00em) darken($color, 19%),
+    
+		0 ($depth * 0.10em) ($depth * 0.04em) rgba(0, 0, 0, 0.2),
+		0 ($depth * 0.10em) ($depth * 0.08em) rgba(0, 0, 0, 0.4),
+		0 ($depth * 0.10em) ($depth * 0.12em) rgba(0, 0, 0, 0.6),
+    
+		0 ($depth * 0.14em) ($depth * 0.10em) rgba(0, 0, 0, 0.2),
+		0 ($depth * 0.18em) ($depth * 0.10em) rgba(0, 0, 0, 0.2);
+}
+
+body, html{
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 900;
+
+	color: $text_b;
+}
+
+h2,span,p,i {
+  margin: 0 0;
+  display: block;
+  padding: "%svh 0" % ($widget_padding * 0.2);
+}
+
+h2 {
+	color: $text_a;
+	emboss($primary_color, 1);
+	font-size: 1.5em !important;
+}
+
+i {
+	margin-right: 1vw;
+}
+
+span, i, p {
+	font-size: 1em !important;
+  letter-spacing: 5px;
+	emboss($secondary_color, 1)
+}
+
+.widget {
+  // Override widget padding, it's not needed
+  // This is the main widget box, which we now don't see
+  padding: 0 !important;
+  margin: 0 !important;
+}

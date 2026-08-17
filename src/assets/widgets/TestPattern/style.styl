@@ -1,0 +1,41 @@
+.testpattern {
+	width: 100% !important;
+	height: 100% !important;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -5;
+	}
+
+	.syncmarker {
+		position: absolute;
+		width: 50vmin;
+		height: 50vmin;
+		border-radius: 100%;
+		.dot {
+			position: absolute;
+			transform: translateX(-50%)
+			left: 50%;
+			background: black;
+			width: 2em;
+			height: 2em;
+			border-radius: 100%;
+		}
+	}
+
+
+	h2 {
+		text-shadow: 1px 1px 1px #000;
+		color: white;
+		font-family: 'Inconsolata';
+		font-style: normal;
+		font-weight: 400;
+	}
+}

@@ -1,0 +1,62 @@
+// NAME="Radiant"
+// DESCRIPTION="This is an example of what can be achieved using layering and hue transforms."
+
+body, html{
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 100;
+
+	color: darken($text_a, 80%);
+}
+
+h2 {
+	font-family: 'Rubik';
+	font-style: normal;
+	font-weight: 500;
+}
+
+i {
+	margin-right: 1vw;
+}
+
+$shade = mix(black, $primary_color, 30%);
+
+.widget:before,
+.widget:after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+  height: 100%;
+	border-radius: 1vw;
+}
+
+.widget:before {
+	box-sizing: content-box;
+	left: -0.3vw;
+	top: -0.3vw;
+	padding: .3vw;
+	z-index: -2;
+	background: $primary_color;
+
+	box-shadow:
+		inset 0 7em 10em -5em rgba(255,255,255,0.6),
+		0 0.3em 0.5em -0.2em rgba($shade, 1),
+		0 1em 3em -0.5em rgba($shade, 0.3),
+		0 3em 3em -0.25em rgba($shade, 0.1);
+}
+
+.widget:after{
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+  background: radial-gradient(circle, lighten($primary_color, 90%) 0%, lighten($primary_color, 70%) 150%); ;
+  box-shadow:
+		inset 0 -0.025em 0.05em 0em rgba(0,0,0,0.15),
+		inset 0 -2.5em 3em -2em rgba(0,0,0,0.2),
+		0 0.15em 0.5em 0 rgba(spin($shade, 30),1),
+		0 0.75em 0.5em rgba(spin($shade, 30),0.35);
+}

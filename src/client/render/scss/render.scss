@@ -1,0 +1,165 @@
+$fa-font-path: "/client/public/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/v4-shims.scss";
+
+@import "/client/public/google_fonts/google_fonts.css";
+
+body,
+html,
+#render {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+#render > div {
+	box-sizing: border-box;
+	position: absolute;
+	overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	line-height: normal;
+}
+
+// Widget header or main element
+h2 {
+	font-size: 1.5em;
+}
+
+// Secondary, main info
+h3 {
+	font-weight: bold;
+	font-size: 1em;
+}
+
+h4 {
+	font-size: 0.9em;
+	font-weight: bold;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 0.9em;
+	font-weight: lighter;
+}
+
+.fadein {
+	opacity: 1 !important;
+	transition: opacity 0.5s;
+}
+
+span.icon {
+	font-size: 1.4em;
+}
+
+// Widget code
+.widget {
+	// opacity: 0;
+
+	i {
+		display: flex;
+		flex: 0 1 auto;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.2em;
+		box-sizing: content-box;
+	}
+}
+
+span,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+i.hide {
+	display: none !important;
+}
+
+// Widget grid setup
+@-ms-viewport {
+	width: device-width;
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+.container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.container-fluid {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.row {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+.no-gutters {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.no-gutters > .col,
+.no-gutters > [class*="col-"] {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}

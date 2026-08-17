@@ -1,0 +1,870 @@
+{
+ "1.0.0": {
+  "version": "1.0.0",
+  "date": 1549075411386,
+  "header": "Welcome to Holographics v1!",
+  "description": "Woohoo! We made it! Where to begin. Well first of all, the entire UI has been redone from scratch. Behind the scenes a lot of work has been done to make UI development much simpler and much more powerful. The immediate benefit to you is that it feels a lot more responsive, changes occur pretty much instantly and we can be a lot more creative with the features we build. We've also worked hard at creating a REST API, so that Holographics can easily integrate with other applications. It's not QUITE ready, there are likely to be some breaking changes in the short term. If anyone wants to have a go at it regardless, feel free to be in touch and we'll send over some examples. The Widget system has also been fully redone. Did someone say <strong>CUSTOM WIDGETS</strong>? Well we got 'em. Again, there's no documentation for this just yet, but you can go ahead and open the source files for all the built-in widgets to see how they're made! The new Widget system also allows for way more options, so this should pave the way for advanced Widgets. The newly added Particle widget is a good example for this. Have fun!",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "New UI"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Custom Widgets"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Multiple active widgets of the same type"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Particle widget - create amazing backgrounds with the new Particle widget!"
+   },
+   {
+    "type": "FEATURE",
+    "description": "YouTube widget - easily show YouTube videos"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Fully replaced Widget system to allow for much greater customization"
+   },
+   {
+    "type": "PERFORMANCE",
+    "description": "Improved theme / style rendering performance by 800%"
+   },
+   {
+    "type": "FEATURE",
+    "description": "This is self-evident, but... Changelogs!"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Auto-updates show progress when downloading"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Update channels! You can now switch between update channels, that way it's possible to test new features before they're released as stable."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Theme editor layout and functionality improved"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Color palettes! Generate a color palette, or save one as a preset."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Color tools to quickly set colors and visibility"
+   },
+   {
+    "type": "FEATURE",
+    "description": "There is now a preview window to see roughly what the global size settings do"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Media files can now be added as Widget props, allowing (for example) the creation of a logo 'bug'"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Colorpicker - finally found a good one"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Better log messages"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Got rid of the 'State updated' popup, it's been replaced by a gentle gray orb in the upper right corner. When receiving information, it briefly flashes bright green. When sending information, it'll also inform you of success by flashing a lovely green checkmark at you. All subtly available for you to notice or ignore at your leisure."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Build system, this one's more for me than for you, but Holographics is now compiled in a much more advanced manner. It's amazing and nerdy and I love it."
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "The ticker is still a little finnicky. It might jump around if you update its contents whilst it's visible."
+   },
+   {
+    "type": "BREAKING CHANGE",
+    "description": "This version of Holographics will be fully functional until February 14, 2019. At that point there will be a mandatory upgrade, and Holographics will become a paid application. We started working on Holographics in 2016 and finally feel it's at a point where we can justify it as a paid application. A free version will continue to be available from the website and through the update system, but will be limited to one active widget and 10 entries. A pro version will become available at that time for a monthly or yearly fee."
+   }
+  ]
+ },
+ "1.0.1": {
+  "version": "1.0.1",
+  "date": 1549402339936,
+  "header": "Bugfix release",
+  "description": "This release has some theme updates, you might need to revert themes to default to see the changes.",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Confirm discard before leaving theme editor works now (thanks Erik)"
+   },
+   {
+    "type": "FIXED",
+    "description": "Moved some styling code around until the Blocky theme looked better"
+   },
+   {
+    "type": "FIXED",
+    "description": "Properly render changes after theme save (thanks Erik)"
+   },
+   {
+    "type": "FIXED",
+    "description": "Icons (they work now)"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "3D theme looks a bit better with default settings"
+   }
+  ]
+ },
+ "1.0.2": {
+  "version": "1.0.2",
+  "date": 1550091905877,
+  "header": "Release of commercial version pushed back 1 week",
+  "description": "The store is almost but not quite ready for release, so we're pushing the release with one week :)",
+  "items": []
+ },
+ "1.0.3-alpha.0": {
+  "version": "1.0.3-alpha.0",
+  "date": 1550169401802,
+  "header": "",
+  "description": "",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Countdown timer has two modes now. You can go set a 'timer' mode to countdown a set number of seconds (rather than a target datetime)."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Can pause and resume countdown timer."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Widgets that show numbers (i.e. countdown and clock) will jump around less. (CSS Tubular-nums feature) Note that this doesn't work with all fonts."
+   }
+  ]
+ },
+ "1.0.3": {
+  "version": "1.0.3",
+  "date": 1550700740799,
+  "header": "Quick show / hide",
+  "description": "This was a quick release to bump our commercial licensing back a bit more and add a shortcut to hide / show widgets.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Quick hide / show Widget (displays either the first entry or all entries depending on the type of widget)"
+   }
+  ]
+ },
+ "1.1.0": {
+  "version": "1.1.0",
+  "date": 1551306203224,
+  "header": "Store is now live!",
+  "description": "Starting today it's possible to buy Holographics! That marks the end of the free use period, starting with 1.1.0 all installations will default to free version limitations until a license is activated.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "It's now possible to buy Holographics"
+   },
+   {
+    "type": "FIXED",
+    "description": "When the license expires, Holographics will no longer delete surplus widgets and entries."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Countdown clock now has a timer function"
+   }
+  ]
+ },
+ "1.1.1": {
+  "version": "1.1.1",
+  "date": 1551435425736,
+  "header": "Hotfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "New entry button disabled in some cases"
+   }
+  ]
+ },
+ "1.2.0": {
+  "version": "1.2.0",
+  "date": 1554415725069,
+  "header": "The API release!",
+  "description": "Pfew, it's out before NAB. We rewrote the API layer in Holographics, from what was basically a cobbled together plate of spaghetti into a well-ordered coherent masterpiece. Holographics now has an official HTTP REST, Socket.io and OSC API. We have documentation and a client-sdk, almost like real grown-up software! There were many other fixes in this release, but that's the major news. OH WAIT! You can now BUY Holographics V1. That's right, we have both a subscription AND a one-off pricing model now.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "REST, Socket.io and OSC API - DOCS: https://holographics.restlet.io"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Port control - auto switch to free port or manually define a port in settings"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Client SDK - A NodeJS client SDK is now available: https://github.com/florisporro/holographics-client-sdk"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Diagnostics - just like the NSA, we now see everything you do. (if you allow us)"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Logging system rewritten and improved"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "18:9 aspect ratio added to YouTube widget"
+   }
+  ]
+ },
+ "1.2.1": {
+  "version": "1.2.1",
+  "date": 1554512600199,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Fixed startup issue (settings.json inaccessible) affecting certain users"
+   }
+  ]
+ },
+ "1.2.2": {
+  "version": "1.2.2",
+  "date": 1554701146746,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Issue with machine activation"
+   }
+  ]
+ },
+ "1.2.3": {
+  "version": "1.2.3",
+  "date": 1557765416709,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Unreliable login / logout process for license and machine activations on some installs"
+   },
+   {
+    "type": "FIXED",
+    "description": "Clicking the 'edit' button on an entry when already editing another entry now switches as expected"
+   },
+   {
+    "type": "FIXED",
+    "description": "Hiding a widget with entries would not always work"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Drastically improved error reporting and diagnostics"
+   },
+   {
+    "type": "FIXED",
+    "description": "Clear palette button"
+   },
+   {
+    "type": "FIXED",
+    "description": "Changelog date format was broken"
+   },
+   {
+    "type": "FIXED",
+    "description": "When running the free version, notifications are now clearer so you know when you're running into free version limits"
+   }
+  ]
+ },
+ "1.3.0": {
+  "version": "1.3.0",
+  "date": 1560774255331,
+  "header": "Animations, themes and fixes",
+  "description": "This update introduces the much anticipated animations system to Holographics! This is something we've been brooding on for a while, how to do animations well, whilst sticking to the easy-but-flexible architecture that is Holographics. In the system we came up with, you select an enter and an exit animation. It's an open system so users are free to create their own animations! Also in this update are several new themes, adjustments to the way we load files from disk making the application more responsive to changes by the user. Check out the launch livestream, here: https://facebook.com/hologfx.io/videos/689462448161833/",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Animations"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Widget Modules now auto refresh like themes, media files and animations."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Three new themes: 'hot', '3d bars' and 'gradient border' further explore the options CSS give us"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Automatic widget repositioning based on layer order"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Sortable widgets and entries"
+   },
+   {
+    "type": "FEATURE",
+    "description": "You can now re-arrange widgets. Higher layers will appear on-top automatically as well."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "More fonts added, enabling more options with themes"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "All default themes have been adjusted for new application settings, some have been changed more completely."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Theme editor now shows the font weight and style options available for built-in fonts"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Filesystem changes on themes, animations and media files now update instantly. So you can use your favourite text editor to edit themes."
+   },
+   {
+    "type": "FIXED",
+    "description": "System font dropdown works again"
+   },
+   {
+    "type": "PERFORMANCE",
+    "description": "All widget styling and positioning (except themes) has moved from CSS-based to javascript-based. This was the big change needed to allow us to build flexible animations."
+   }
+  ]
+ },
+ "1.4.0": {
+  "version": "1.4.0",
+  "date": 1561722971219,
+  "header": "Add fullpage widget",
+  "description": "The new widget allows you to fully take over the screen with a message and a logo. In the background, Holographics has been tweaked to allow distribution to cloud-based systems. We can now run Holographics in the cloud as well! If your workflow would benefit from a cloud-based Holographics instance, feel free to get in touch.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Fullpage widget"
+   },
+   {
+    "type": "CHANGED",
+    "description": "Infrastructure changes to allow cloud-based instances"
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed a bug causing widgets to malfunction when updating from several versions ago."
+   }
+  ]
+ },
+ "1.4.1": {
+  "version": "1.4.1",
+  "date": 1561903166395,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Cancelling an update download"
+   },
+   {
+    "type": "FIXED",
+    "description": "App checks for updates on startup again"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "New update available notification is clearer"
+   }
+  ]
+ },
+ "1.4.2": {
+  "version": "1.4.2",
+  "date": 1561908430921,
+  "header": "Bugfix",
+  "description": "Fixed some minor issues in the fullpage widget",
+  "items": []
+ },
+ "1.4.3": {
+  "version": "1.4.3",
+  "date": 1561973797642,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "The 'open folder' buttons"
+   }
+  ]
+ },
+ "1.4.4": {
+  "version": "1.4.4",
+  "date": 1563203433987,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Saving themes with new filenames (Credit: Daisy)"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Control view URL added to main menu"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Some UI changes, added OSC path to Settings page"
+   }
+  ]
+ },
+ "1.4.5": {
+  "version": "1.4.5",
+  "date": 1563226206917,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "'You need to add an entry first' error shown for widgets with no entries on the free version"
+   },
+   {
+    "type": "FIXED",
+    "description": "Images not showing up at all if an unknown file type is present in the mediafiles folder (Credit: Houwing)"
+   }
+  ]
+ },
+ "1.5.0": {
+  "version": "1.5.0",
+  "date": 1569157445974,
+  "header": "Revamped license system",
+  "description": "We've had to update our license system to comply with new EU regulations. This change is not backwards compatible, so an upgrade to v1.5 is required to activate new licenses.",
+  "items": [
+   {
+    "type": "BREAKING CHANGE",
+    "description": "License server upgrades are not backwards compatible - updating to v1.5 is required to activate Holographics"
+   },
+   {
+    "type": "FIXED",
+    "description": "We now hide the 'show' button for widgets you can't activate, i.e. a broadcast message without entries."
+   },
+   {
+    "type": "FIXED",
+    "description": "Update-checker should no longer show an error if there is no internet connection"
+   },
+   {
+    "type": "FIXED",
+    "description": "If certain non-media filetypes were added to the mediafiles folder (like zip files), mediafiles would no longer work."
+   }
+  ]
+ },
+ "1.5.1": {
+  "version": "1.5.1",
+  "date": 1569267039191,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Fix ... is not a function, that apparently everyone except me is having"
+   }
+  ]
+ },
+ "1.5.2": {
+  "version": "1.5.2",
+  "date": 1570182365310,
+  "header": "Test pattern widget",
+  "description": "This update adds a simple widget - one that displays industry standard test patterns on screen. Options are available to display various info, time with millisecond clock and a moving marker.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Test pattern widget"
+   }
+  ]
+ },
+ "1.5.3": {
+  "version": "1.5.3",
+  "date": 1573163329873,
+  "header": "Video widget",
+  "description": "We now have a video widget. Any MP4, Webm or OGG video files in the mediafiles folder are available to the video widget.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Video widget"
+   }
+  ]
+ },
+ "1.6.0": {
+  "version": "1.6.0",
+  "date": 1579276197522,
+  "header": "Bugfix and stability update",
+  "description": "It's been a little quiet around Holographics lately, but that's just because we're working on the next big steps for the application! Stay tuned. In this release we've revamped the way widgets are defined, allowing for easier widget development in the future. It also fixes a number of small bugs and adds a few small features.",
+  "items": [
+   {
+    "type": "BREAKING CHANGE",
+    "description": "The way a widget is defined was changed to use a different syntax. This will only affect you if you've created custom widgets. We're still not entirely done defining the widget API, once we are we'll create documentation and tutorials for custom widgets."
+   },
+   {
+    "type": "FIXED",
+    "description": "Port 6000 causes issues on OS X, so this option has been removed (Credit: Gary)"
+   },
+   {
+    "type": "FIXED",
+    "description": "Pressing 'clear' on a color now sets that color to transparent (Credit: Houwing)"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Application now remembers window size and position for next startups (Credit: Sten)"
+   },
+   {
+    "type": "FIXED",
+    "description": "If a custom widget has issues this is now expressed more clearly in the UI"
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed an issue that required some users to re-activate their licence after several months"
+   },
+   {
+    "type": "CHANGED",
+    "description": "You can now use HTML in the input fields for most widgets."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Updated electron to 7.1.9 and node to 12.8.1"
+   }
+  ]
+ },
+ "1.6.2": {
+  "version": "1.6.2",
+  "date": 1579283019365,
+  "header": "Hotfix",
+  "description": "Fixes startup issues for fresh installs",
+  "items": []
+ },
+ "1.7.0": {
+  "version": "1.7.0",
+  "date": 1586982916956,
+  "header": "Oh yay a clock!",
+  "description": "This release fixes a number of issues that crept in from the last release, and changes some stuff behind the scenes. There's also a clock now!",
+  "items": [
+   {
+    "type": "IMPROVED",
+    "description": "If you're running into free version limitations, the application will now let you know once per startup as the error message we had initially didn't really get the point accross. It can still be closed with one click though."
+   },
+   {
+    "type": "IMPROVED",
+    "description": "We moved some of the links in the header to the application 'Help' menu. You can now also file bug reports easily."
+   },
+   {
+    "type": "FEATURE",
+    "description": "There's a clock now!"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "You can now open the user data directory from within the application context menu"
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed compatibility with V-Mix"
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed compatibility with CasparCG v2.2.0"
+   }
+  ]
+ },
+ "1.8.0": {
+  "version": "1.8.0",
+  "date": 1589969818628,
+  "header": "Outputs (BETA)",
+  "description": "This update introduces the concept of outputs to Holographics. That is, a way to output to an external device, or file format. We're starting off with stills output to Blackmagic Atem Media players, output to PNG files and video output to Blackmagic Decklink and Ultrastudio devices.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "Output to Blackmagic Atem Media Player"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Output to Blackmagic Decklink and UltraStudio devices"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Output to PNG files"
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "Output to Decklink and Ultrastudio in YUV color formats is disabled until we can optimize it. We recommend only using devices that support RGB output for now. Please check your device specs to find out which formats it supports."
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "Please be careful using these features in production until they hit the main branch, they may (in the worst case) crash your device."
+   }
+  ]
+ },
+ "1.8.1": {
+  "version": "1.8.1",
+  "date": 1589979155579,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Alpha channel not rendering properly when outputting key and fill with Decklink (thanks Pim!)"
+   }
+  ]
+ },
+ "1.8.2": {
+  "version": "1.8.2",
+  "date": 1590617119682,
+  "header": "Bugfix",
+  "description": "Several small issues fixed in this release.",
+  "items": []
+ },
+ "1.8.3": {
+  "version": "1.8.3",
+  "date": 1591379831613,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Decklink output is slightly more stable, but still only compatible with BGRA devices like the UltraStudio HD Mini"
+   },
+   {
+    "type": "FIXED",
+    "description": "Several UI changes for the settings and updates page, they now suck slightly less"
+   },
+   {
+    "type": "FIXED",
+    "description": "Issue where two widgets of same type would sometimes sync up properties (like several countdown clock syncing up for no reason)"
+   }
+  ]
+ },
+ "1.9.0": {
+  "version": "1.9.0",
+  "date": 1592390576850,
+  "header": "Performance release",
+  "description": "Lots of small things changed behind the scenes for this release. Holographics should feel a bit faster, startup faster, respond faster. This release also changes some things behind the scenes that will allow for the building of the much requested data sources feature, hopefully coming later 2020.",
+  "items": [
+   {
+    "type": "BREAKING CHANGE",
+    "description": "Lots of small API changes behind the scenes, please test thoroughly before using in production and submit a bug report if you encounter a problem."
+   },
+   {
+    "type": "PERFORMANCE",
+    "description": "Improved performance overall, notably startup should be much quicker."
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed some further small issues with Decklink output. Still only BGRA output devices are supported at this time."
+   },
+   {
+    "type": "FIXED",
+    "description": "Some bugs in license machine management."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Connection indicator will now show up if control interface is disconnected from the server (should only happen if using the control interface over the LAN)"
+   },
+   {
+    "type": "FIXED",
+    "description": "Control interface will now resync the entire application state with the server if connection was lost, preventing out of sync issues"
+   }
+  ]
+ },
+ "1.9.1": {
+  "version": "1.9.1",
+  "date": 1592406365411,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "Fixed issue that could slow down the UI when sending usage data."
+   }
+  ]
+ },
+ "1.9.2": {
+  "version": "1.9.2",
+  "date": 1592432066758,
+  "header": "Bugfix",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "User-modified files like themes, widgets, animations could be overwritten with defaults."
+   }
+  ]
+ },
+ "1.10.0": {
+  "version": "1.10.0",
+  "date": 1595434946636,
+  "header": "Improvements for UltraStudio HD output",
+  "description": "After extensive testing with Decklink outputs over the last months, we've decided to rename the feature to 'UltraStudio HD' output as it's pretty clear that it works best with that type of device for the moment. The UI will now only show you Decklink or Ultrastudio devices that are supported by Holographics, which is still currently limited to devices that accept BGRA encoded raw video. In our testing we use the UltraStudio HD Mini, which is perfect for Key & Fill output to professional hardware switchers. Stability of this output type should be much improved.",
+  "items": [
+   {
+    "type": "IMPROVED",
+    "description": "We only show Blackmagic output devices that are supported to choose from"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "You can now only select resolutions & framerates supported by your device"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "You can now only select keying modes supported by your device"
+   },
+   {
+    "type": "FIXED",
+    "description": "UltraStudio device not appearing in the interface in some cases"
+   },
+   {
+    "type": "FIXED",
+    "description": "UltraStudio output on Windows would fail if your screen resolution was HD or lower"
+   }
+  ]
+ },
+ "1.11.0-beta.0": {
+  "version": "1.11.0-beta.0",
+  "date": 1606139217077,
+  "header": "Animations update",
+  "description": "With this update, we've rewritten the way animations work in Holographics. Widget programmers can now override the way widgets are positioned, sized and animated. This makes the widget system a more flexible tool overall. We've also updated to the latest version of GSAP, allowing more intricate and performant animations.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "New properties in widget API allowing for self sizing, animating and positioning widgets."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Several new widgets, mostly for background animations"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Add showName query parameter to allow users to override widget visibility using the render URL by passing through widget names"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Updated to the latest version of GSAP"
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "Not all animations work well with all widgets, for example the 'textDecode' animation does not work with clocks or countdowns. This will be fixed in a later update."
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "You may have to delete the animations folder in your user data directory in order to get the updated animations."
+   }
+  ]
+ },
+ "1.11.0-beta.1": {
+  "version": "1.11.0-beta.1",
+  "date": 1619937978032,
+  "header": "Animations update v2",
+  "description": "This update improves on what was added in 1.11.0-beta.0 and fixes a lot of bugs that crept up (like the ticker and test pattern not animating). You can now customize the animation used for every individual widget, a long awaited feature. The reposition engine is improved to be more efficient. Lastly, two new widgets have arrived! The timeline and schedule allow you to keep your audience informed on what's past and what's coming.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "New timeline and schedule widget"
+   },
+   {
+    "type": "FEATURE",
+    "description": "Change animations per widget"
+   },
+   {
+    "type": "FIXED",
+    "description": "Fixed widgets that were broken since the last beta"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Repositioning system improved to use far less performance"
+   }
+  ]
+ },
+ "1.11.0": {
+  "version": "1.11.0",
+  "date": 1619952912146,
+  "header": "Animations update",
+  "description": "With this update, we've rewritten the way animations and positioning work in Holographics. Renderer performance should be higher, but it's also allowed customization of animations per widget. There are also 8 new widgets in total, from cool animations to a full-on schedule.",
+  "items": [
+   {
+    "type": "FEATURE",
+    "description": "New timeline and schedule widget allow you to keep your audience informed on what's past and what's coming."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Several new color and animations widgets"
+   },
+   {
+    "type": "FEATURE",
+    "description": "You can now change animations per widget"
+   },
+   {
+    "type": "FEATURE",
+    "description": "New properties in widget API allowing for self sizing, animating and positioning widgets."
+   },
+   {
+    "type": "FEATURE",
+    "description": "Add showName query parameter to allow users to override widget visibility using the render URL by passing through widget names"
+   },
+   {
+    "type": "FIXED",
+    "description": "OS X builds are now notarized, fixing the Apple installation barrier"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Repositioning system improved to use far less performance"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Info boxes on the widgets, animations and themes page about customization and dealing with updates"
+   },
+   {
+    "type": "IMPROVED",
+    "description": "Updated to the latest version of GSAP for more performant animations, allowing for more complex animations"
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "Not all animations work well with all widgets, for example the 'textDecode' animation does not work with clocks or countdowns. This will be fixed in a later update."
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "After updating, you may have to reset your widgets, animations and themes. Make sure to back up any customizations you have made."
+   }
+  ]
+ },
+ "1.11.1": {
+  "version": "1.11.1",
+  "date": 1629385939446,
+  "header": "Bugfixes",
+  "description": "",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "With the introduction of dynamic widget categories, widgets that did not have a category assigned are now put into 'Other'. Widget makers can also add their own category and it will appear in the interface dynamically."
+   },
+   {
+    "type": "FIXED",
+    "description": "Code signing certificate on Windows updated, should prevent OS trust warnings in the future."
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "The 1.11 release has proven to be experimental in a few ways. Ultrastudio output isn't working for everyone and it's been hard to determine the origin of this issue. If you need Ultrastudio output, you have two direct options: downgrade to 1.10, or use an external application (OBS, CasparCG etc) to do hardware output.<br />You can download old versions from our changelog: https://hologfx.io/changelog <br />And you can find more information about hardware outputs with external applications in our docs: https://docs.hologfx.io/#output-via-third-party-applications"
+   },
+   {
+    "type": "KNOWN ISSUE",
+    "description": "Sometimes widgets get 'stuck' when first appearing in the renderer. To fix this, just show and hide the widget once after opening the render instance."
+   }
+  ]
+ },
+ "1.11.2": {
+  "version": "1.11.2",
+  "date": 1632941767725,
+  "header": "Bugfix",
+  "description": "This release fixes UltraStudio output on Mac OS, a persistant bug since v1.11. Turns out the Mac OS notarization was preventing the Blackmagic library from loading properly.",
+  "items": [
+   {
+    "type": "FIXED",
+    "description": "UltraStudio output on Mac OS fixed"
+   }
+  ]
+ }
+}

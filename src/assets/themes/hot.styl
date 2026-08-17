@@ -1,0 +1,36 @@
+// NAME="Hot"
+// DESCRIPTION="Colors text based on a gradient from primary & secondary color"
+
+body, html{
+	color: $text_a;
+	font-family: 'Merriweather Sans';
+	font-style: normal;
+	font-weight: 700;
+}
+
+h2,i {
+	background: linear-gradient($primary_color, $secondary_color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+i {
+	margin-right: 1vw;
+}
+
+.widget {
+	background: $background_a;
+	
+	clip-path: polygon(
+		5% 0%, // TOP LEFT
+		100% 0%, // TOP RIGHT
+		95% 100%, // BOTTOM RIGHT
+		0% 100%); // BOTTOM LEFT
+	
+	padding-left: 4vw !important;
+	padding-right: 4vw !important;
+}

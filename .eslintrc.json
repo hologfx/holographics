@@ -1,0 +1,30 @@
+{
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"node": true,
+		"es2020": true
+	},
+	"extends": [
+		"plugin:vue/essential",
+		"standard",
+		"plugin:mocha/recommended",
+		"plugin:prettier/recommended"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"parserOptions": {
+		"ecmaVersion": 2020,
+		"ecmaFeatures": {
+			"classes": true,
+			"generators": true,
+			"objectLiteralShorthandMethods": true
+		}
+	},
+	"plugins": ["mocha", "vue"],
+	"rules": {
+		"no-undef": "off"
+	}
+}

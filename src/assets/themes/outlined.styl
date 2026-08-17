@@ -1,0 +1,58 @@
+// NAME="Outlined"
+// DESCRIPTION="This theme features animated outline."
+
+body, html{
+	font-family: 'Open Sans';
+	font-weight: 400;
+	color: $text_a;
+}
+
+h2 {
+	font-family: 'Cabin';
+	font-style: bold;
+	font-size: 1.2em;
+}
+
+i {
+	margin-right: 1vw;
+}
+
+$anime-time = 8s;
+
+$box-size = 200px;
+$clip-distance = .05;
+$clip-size = $box-size * (1 + $clip-distance * 2);
+$path-width = 2px;
+
+.widget {
+	background-color: rgba($background_a);
+	box-sizing: border-box;
+
+	box-shadow: inset 0 0 0 1px rgba($primary_color, .5px);
+
+  &::before,
+  &::after {
+		color: $primary_color;
+		position: absolute;
+		top: -.25em;
+		left: -.25em;
+		width: calc(100% + .5em);
+		height: calc(100% + .5em);
+    content: '';
+		box-sizing: border-box;
+    box-shadow: inset 0 0 0 $path-width;
+    animation: clipMe $anime-time linear infinite;
+  }
+
+  &::before {
+    animation-delay: $anime-time * -.5;
+  }
+
+}
+
+@keyframes clipMe {
+  0%, 100% {clip-path: polygon(2% 100%, 0 100%, 0 0, 2% 0); }
+  25% {clip-path: polygon(100% 100%, 0 100%, 0 99%, 100% 99%); }
+  50% {clip-path: polygon(100% 100%, 100% 100%, 99% 0, 100% 0); }
+  75% {clip-path: polygon(100% 2%, 0 2%, 0 0, 100% 0); }
+}

@@ -1,0 +1,13 @@
+.schedule
+	.event(v-for="(event, index) in events" :class="{past: event.past}" :style="event.past ? 'color: '+widget.props.pastEventColor : ''")
+		span.time(v-if="event.nextEventTime") {{ event.time.format("HH:mm") }} - {{ event.nextEventTime.format("HH:mm") }}
+			span.duration(v-if="widget.props.showDuration") {{ event.duration }} {{ widget.props.durationLabel }}
+		span.time(v-else) {{ event.time.format("HH:mm") }}
+		h3 {{ event.name }}
+		p.description {{ event.description }}
+		template(v-if="!event.started && widget.props.showUpcomingCountdown")
+			//- Event is upcoming
+			p.timeIndicator {{ widget.props.countdownLabelUpcoming }}{{ event.timeToEventStart | countdownFormat(widget.props.countdownFormat) }}
+		template(v-else-if="event.started && !event.past && widget.props.showRemainingCountdown")
+			//- Event is currently happening
+			p.timeIndicator {{ widget.props.countdownLabelActive }}{{ event.timeToEventEnd | countdownFormat(widget.props.countdownFormat) }}

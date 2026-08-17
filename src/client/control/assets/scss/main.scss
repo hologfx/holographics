@@ -1,0 +1,221 @@
+// @import '@fortawesome/fontawesome-free';
+$fa-font-path: "/client/public/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/v4-shims.scss";
+
+@import "~bootstrap/scss/functions";
+@import "bootstrap_variables";
+@import "~bootstrap/scss/bootstrap";
+
+/* icon font path, required */
+
+$--font-path: "/client/public/webfonts";
+// $--font-path: "~element-ui/lib/theme-chalk/fonts/";
+@import "element_variables";
+@import "~element-ui/packages/theme-chalk/src/index";
+
+@import "/client/public/google_fonts/google_fonts.css";
+
+/* Navigation */
+#navigation {
+	a.list-group-item {
+		i {
+			color: theme-color-level(primary, 1);
+		}
+		&.active i {
+			color: $white;
+		}
+		span.eye i {
+			color: $white;
+		}
+	}
+}
+
+@-webkit-keyframes redPulse {
+	from {
+		text-shadow: 0 0 16px #9c0000;
+		color: #f33314;
+	}
+	50% {
+		text-shadow: 0 0 18px #ff0000;
+		color: #f35136;
+	}
+	to {
+		text-shadow: 0 0 16px #9c0000;
+		color: #f33314;
+	}
+}
+
+span.redPulse {
+	-webkit-animation-name: redPulse;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bluePulse {
+	from {
+		text-shadow: 0 0 16px #007c9b;
+		color: #15e6ff;
+	}
+	50% {
+		text-shadow: 0 0 18px #00ccff;
+		color: #9cf5ff;
+	}
+	to {
+		text-shadow: 0 0 16px #007c9b;
+		color: #15e6ff;
+	}
+}
+
+@-webkit-keyframes operating {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+span.bluePulse {
+	-webkit-animation-name: bluePulse;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+}
+
+.header {
+	background: $dark;
+	margin-bottom: 2em;
+	position: relative;
+}
+.header::after {
+	content: "";
+	width: 100%;
+	height: 1em;
+	bottom: -1em;
+	position: absolute;
+	left: 0;
+	background-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+	background-size: 400% 400%;
+}
+.header.active::after {
+	content: "";
+	width: 100%;
+	height: 1em;
+	position: absolute;
+	bottom: -1em;
+	background-image: linear-gradient(to right, #d53a3a 0%, #d59a3a 100%);
+	background-size: 400% 400%;
+	animation: operating 5s ease infinite;
+}
+
+// Digital clock
+#clock {
+	font-family: inherit;
+	font-size: 2rem;
+	color: #ffffff;
+	text-align: center;
+	// position: absolute;
+	// top: 50%;
+	// transform: translate(-50%, -50%);
+	color: #f7f9fa;
+	font-variant-numeric: tabular-nums;
+	.time {
+		letter-spacing: 0.05em;
+		font-size: 80px;
+		padding: 5px 0;
+	}
+	.date {
+		letter-spacing: 0.1em;
+		font-size: 24px;
+	}
+	.text {
+		letter-spacing: 0.1em;
+		font-size: 12px;
+		padding: 20px 0 0;
+	}
+}
+
+#connection {
+	font-size: 2rem;
+	color: $red;
+}
+
+/* Preview panel */
+.preview-wrap {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 0px;
+	overflow: hidden;
+	background: rgb(83, 83, 83);
+}
+.preview-wrap iframe {
+	position: absolute;
+	// top: 50% - 640px;
+	// left: 50% - 360px;
+	width: 1280px;
+	height: 720px;
+	border: 1px solid #ccc;
+	transform: scale(0.25);
+	transform-origin: 0 0;
+}
+
+#side_panel {
+	background: rgba(0, 0, 0, 0);
+}
+
+p.status {
+	font-size: 3em;
+}
+
+li.recording {
+	margin-bottom: 1em;
+}
+
+#style-controls.dropdown-menu {
+	padding: 0px;
+	min-width: 450px;
+}
+
+/* Input group correction for size dropdown with prepended checkbox */
+.input-group > select {
+	-webkit-appearance: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.btn:focus,
+.btn:active,
+button {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+// Debug log
+pre.debuglog {
+	height: 400px;
+	background: rgba(0, 0, 0, 0.7);
+	color: white;
+	padding: 0.5em;
+}
+.debuglog > span {
+	border-left: 4px solid #eee;
+	padding-left: 0.5em;
+}
+.debuglog > span.WARNING {
+	border-left-color: #f0ad4e;
+}
+.debuglog > span.ERROR {
+	border-left-color: #d9534f;
+}
+.debuglog > span.INFO {
+	border-left-color: #5bc0de;
+}
+.debuglog > span.SUCCESS {
+	border-left-color: #5cb85c;
+}

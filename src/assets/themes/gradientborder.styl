@@ -1,0 +1,29 @@
+// NAME="Gradient border"
+// DESCRIPTION="This theme has a gradiented border (runs from primary to secondary color)"
+
+body, html{
+	font-family: 'Ubuntu';
+	font-style: normal;
+	font-weight: 300;
+	color: $text_a;
+}
+
+h2 {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+  background: -webkit-linear-gradient(right,$primary_color, $secondary_color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+i {
+  margin-right: 1vw;
+}
+
+.widget {
+	border-style: solid;
+  border-width: 1px;
+  border-image: linear-gradient(to left, $primary_color,$secondary_color);
+  border-image-slice: 1;
+}

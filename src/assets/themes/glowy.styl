@@ -1,0 +1,49 @@
+// NAME="Glowy"
+// DESCRIPTION="Glowy had an encounter with some radioactive waste as a child."
+
+body, html{
+	font-family: 'Nunito Sans';
+	font-weight: 400;
+	color: lighten($text_a, 50%);
+}
+
+h2 {
+	font-weight: 900;
+}
+
+.widget {
+  // background: $background_a;
+	background: linear-gradient(to bottom, lighten($background_a, 8%),$background_a 40%, darken($background_a, 30%) 100%);
+	border-radius: .5vw;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+  
+  box-shadow: 0px 0px 0px .5px lighten($primary_color, 90%),
+							0px 0px 0px 2px lighten($primary_color, 90%),
+							0px 0px 4px 2px lighten($primary_color, 60%),
+  						0px 0px 8px 0px lighten($primary_color, 50%),
+  						0px 0px 20px 0px lighten($primary_color, 30%),
+  						0px 0px 40px 0px darken($primary_color, 10%),
+  						0px 0px 90px 0px darken($primary_color, 50%);
+}
+
+.widget:before {
+	content: '';
+	position: absolute;
+	width: 1vw;
+	height: 100%;
+	left: -1vw;
+	top: 0;
+	background: lighten($secondary_color, 90%);
+
+	box-shadow: inset 0px 0px 40px 0px lighten($secondary_color, 30%),
+  						inset 0px 0px 12px 0px lighten($secondary_color, 30%),
+  						inset 0px 0px 4px 0px lighten($secondary_color, 10%),
+							0px 0px 0px .5px lighten($secondary_color, 90%),
+							0px 0px 0px 2px lighten($secondary_color, 90%),
+							0px 0px 4px 2px lighten($secondary_color, 60%),
+  						0px 0px 8px 0px lighten($secondary_color, 50%),
+  						0px 0px 20px 0px lighten($secondary_color, 30%),
+  						0px 0px 40px 0px darken($secondary_color, 10%),
+  						0px 0px 90px 0px darken($secondary_color, 50%);
+}

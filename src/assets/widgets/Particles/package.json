@@ -1,0 +1,14 @@
+{
+  "name": "particles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "particles.js": "https://github.com/Saturate/particles.js.git#patch-1"
+  }
+}
