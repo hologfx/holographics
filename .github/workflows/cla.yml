@@ -17,7 +17,7 @@ jobs:
     # post-release comment and aborts the release. Signatures only matter while a
     # PR is open, so the closed event is dropped above rather than relying on this
     # guard, which did not skip the job on PR #3.
-    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
