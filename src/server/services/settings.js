@@ -9,7 +9,7 @@ module.exports = {
 	patch(data) {
 		settings.merge(data).write()
 		const newSettings = settings.read().value()
-		updates.channel = newSettings.updates.channel
+		updates.setChannel(newSettings.updates.channel)
 		ApplicationLog.setLevel(newSettings.logging.level)
 		return newSettings
 	}

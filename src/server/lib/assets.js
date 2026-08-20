@@ -68,6 +68,14 @@ class AssetManager {
 		this.prototype.watcher.on("all", AssetManager.handleFileChange)
 	}
 
+	static async stopWatching() {
+		const watcher = this.prototype.watcher
+		if (!watcher) return
+		delete this.prototype.watcher
+		logging.log("Closing file watchers")
+		await watcher.close()
+	}
+
 	static handleFileChange(event, changedFilePath) {
 		allAssetModels.forEach(assetModel => {
 			if (changedFilePath.search(assetModel.directory) > 0) {

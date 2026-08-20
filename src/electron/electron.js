@@ -92,6 +92,15 @@ function createMainWindow(port) {
 		return { action: 'deny' };
 	});
 
+	// Same-window navigations bypass the handler above, so a plain link in the
+	// release notes would replace the control panel with the linked page.
+	mainWindow.webContents.on("will-navigate", (event, url) => {
+		if (!url.startsWith(`http://127.0.0.1:${port}/`)) {
+			event.preventDefault()
+			shell.openExternal(url)
+		}
+	})
+
 	mainWindow.once("ready-to-show", () => {
 		splash.destroy()
 		splash = null

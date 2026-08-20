@@ -4,6 +4,13 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin")
+const fs = require("fs")
+
+// The Updates page shows the whole history, the way the old generated
+// release-notes.md did.
+const changelog = fs.existsSync("CHANGELOG.md")
+	? fs.readFileSync("CHANGELOG.md", "utf8")
+	: ""
 const smp = new SpeedMeasurePlugin()
 
 module.exports = smp.wrap({
@@ -55,6 +62,9 @@ module.exports = smp.wrap({
 	},
 	plugins: [
 		new VueLoaderPlugin(),
+		new webpack.DefinePlugin({
+			__CHANGELOG__: JSON.stringify(changelog)
+		}),
 		new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
 		new webpack.ProvidePlugin({
 			$: "jquery",

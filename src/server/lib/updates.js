@@ -1,5 +1,4 @@
 const { EventEmitter } = require("events")
-const status = require("./status")
 const { Logger } = require("../lib/logging")
 const logging = new Logger("lib/updates")
 const settings = require("../lib/settings")
@@ -121,8 +120,13 @@ if (appMode.environment === "electron" && !appMode.development) {
 	updater.autoDownload = false
 	updater.autoInstallOnAppQuit = false
 	updater.allowDowngrade = true
-	updater.currentVersion = status.get().version
-	updater.channel = settings.read().value().updates.channel
 }
+
+updater.setChannel = channel => {
+	updater.channel = channel === "alpha" ? "beta" : channel
+	updater.allowPrerelease = updater.channel !== "latest"
+}
+
+updater.setChannel(settings.read().value().updates.channel)
 
 module.exports = updater
