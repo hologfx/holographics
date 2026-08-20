@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.12.0-beta.9](https://github.com/hologfx/holographics/compare/v1.12.0-beta.8...v1.12.0-beta.9) (2026-08-20)
+
+
+### Bug Fixes
+
+* **ci:** keep CLA signatures off the protected default branch ([16e5d4f](https://github.com/hologfx/holographics/commit/16e5d4f7c9ddb7db2c7cd0d5dbe6e3a5de77daf3))
+* **ci:** stop release-please re-proposing history after every release ([caaa2d8](https://github.com/hologfx/holographics/commit/caaa2d85287b209fc9aa8a113b4379f08f04fb4f))
+* **updates:** show the whole changelog again, not just the newest release ([dfff10d](https://github.com/hologfx/holographics/commit/dfff10d26d33614df467486eab297bf3e31a9e10))
+
 ## [1.12.0-beta.8](https://github.com/hologfx/holographics/compare/v1.12.0-beta.7...v1.12.0-beta.8) (2026-08-20)
 
 
