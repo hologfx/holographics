@@ -38,11 +38,6 @@
 				"provider": "github",
 				"owner": "hologfx",
 				"repo": "holographics"
-			},
-			{
-				"provider": "s3",
-				"bucket": "holographics-distribution",
-				"region": "eu-central-1"
 			}
 		],
 		"mac": {

@@ -29,7 +29,6 @@
 					div
 						el-radio(v-model="updatechannel" label="latest" border) Stable
 						el-radio(v-model="updatechannel" label="beta" border) Beta
-						el-radio(v-model="updatechannel" label="alpha" border) Alpha (test builds only)
 			.col-md-6
 				div#changelog
 					VueMarkdown(:source="updates.updateInfo.releaseNotes" :linkify="false")
@@ -87,99 +86,33 @@ export default {
 #changelog {
 	height: 70vh;
 	overflow-y: scroll;
-	background: rgba(0, 0, 0, 1) // Intro text
-		p {
+	background: rgba(0, 0, 0, 1);
 
-	}
 	// Version number
-	h1 {
+	h2 {
 		font-family: "Ubuntu";
 		font-size: 1.5rem;
 		margin-right: 0.5em;
 		border-bottom: 3px solid rgb(69, 151, 251);
 	}
-	h1:not(:first-child) {
+	h2:not(:first-child) {
 		margin-top: 3rem;
 	}
-	span.date {
-		font-size: 0.875rem;
-		color: #6c757d;
-	}
 
-	// Version header
-	h2 {
-		font-size: 1rem;
+	// Features, Bug Fixes etc
+	h3 {
+		font-size: 0.875rem;
 		font-weight: bolder;
 		text-transform: uppercase;
+		color: #6c757d;
+		margin-top: 1.5rem;
 	}
-	// Fixes, Features etc
-	h3 {
-		display: none;
-	}
-	// Bulletpoints
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		li {
-			margin: 0;
-			padding: 0.5rem 0;
-			color: #6c757d;
 
-			span.type {
-				padding: 0.3rem 0.5rem;
-				color: white;
-				font-weight: bold;
-				margin-right: 1rem;
-				&.FEATURE {
-					background: #5cb85c;
-					&:before {
-						content: "🍪 ";
-					}
-				}
-				&.FIXED {
-					background: #d9534f;
-					&:before {
-						content: "🔧 ";
-					}
-				}
-				&.CHANGED {
-					background: rgb(69, 206, 251);
-					&:before {
-						content: "📝 ";
-					}
-				}
-				&.IMPROVED {
-					background: #e83e8c;
-					&:before {
-						content: "☎️ ";
-					}
-				}
-				&.PERFORMANCE {
-					background: #7c4dff;
-					&:before {
-						content: "🏎️ ";
-					}
-				}
-				&.DEPRECATED {
-					background: #f0ad4e;
-					&:before {
-						content: "👴🏻 ";
-					}
-				}
-				&.BREAKING {
-					background: #d9534f;
-					&:before {
-						content: "💥 ";
-					}
-				}
-				&.KNOWN {
-					background: #be4eff;
-					&:before {
-						content: "💣 ";
-					}
-				}
-			}
+	ul {
+		padding-left: 1.25rem;
+		li {
+			padding: 0.25rem 0;
+			color: #6c757d;
 		}
 	}
 }
