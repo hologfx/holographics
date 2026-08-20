@@ -33,7 +33,8 @@
 			.col-md-6
 				div#changelog
 					VueMarkdown(v-if="updates.updateInfo.releaseNotes" :source="updates.updateInfo.releaseNotes" :linkify="false")
-					p.text-muted(v-else-if="!updates.checkingForUpdates") No release notes to show.
+					VueMarkdown(v-if="changelog" :source="changelog" :linkify="false")
+					p.text-muted(v-if="!updates.updateInfo.releaseNotes && !changelog && !updates.checkingForUpdates") No release notes to show.
 </template>
 
 <script>
@@ -61,6 +62,9 @@ export default {
 		])
 	},
 	computed: {
+		changelog() {
+			return __CHANGELOG__
+		},
 		...mapState(["updates", "debug"]),
 		...mapGetters(["currentVersion"]),
 		updatechannel: {
