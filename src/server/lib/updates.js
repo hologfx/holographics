@@ -122,7 +122,13 @@ if (appMode.environment === "electron" && !appMode.development) {
 	updater.autoInstallOnAppQuit = false
 	updater.allowDowngrade = true
 	updater.currentVersion = status.get().version
-	updater.channel = settings.read().value().updates.channel
 }
+
+updater.setChannel = channel => {
+	updater.channel = channel === "alpha" ? "beta" : channel
+	updater.allowPrerelease = updater.channel !== "latest"
+}
+
+updater.setChannel(settings.read().value().updates.channel)
 
 module.exports = updater

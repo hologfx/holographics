@@ -22,7 +22,7 @@ module.exports = {
 	async get() {
 		if (!appMode.development && appMode.environment !== "electron")
 			throw Error("Can not update automatically in containerized mode")
-		updates.channel = settings.get("updates").value().channel
+		updates.setChannel(settings.get("updates").value().channel)
 
 		const result = new Promise((resolve, reject) => {
 			updates.once("error", updateInfo => {
