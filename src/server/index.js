@@ -64,10 +64,47 @@ async function startHolographics() {
 
 		process.emit("startupStatus", "Starting user interface")
 
+		registerShutdown()
+
 		process.emit("finishedStartup", port.get())
 	} catch (error) {
 		console.error(error)
 	}
+}
+
+// Quitting with the asset watcher still open deadlocks the main thread: fsevents
+// releases its threadsafe function during Node's environment cleanup and blocks
+// forever on a mutex, so no timeout-based fallback can recover from it.
+function registerShutdown() {
+	let app
+	try {
+		app = require("electron").app
+	} catch (error) {
+		return
+	}
+	if (!app) return
+
+	let quitting = false
+	app.on("before-quit", async event => {
+		if (quitting) return
+		quitting = true
+		event.preventDefault()
+
+		try {
+			const wasRendering = Output.all().some(
+				output => output.rendering.stills || output.rendering.stream
+			)
+			Output.all().forEach(output => output.stopRenderer())
+			await assets.stopWatching()
+			if (wasRendering) {
+				await new Promise(resolve => setTimeout(resolve, 2000))
+			}
+		} catch (error) {
+			logging.log(error)
+		}
+
+		app.quit()
+	})
 }
 
 module.exports = {

@@ -47,9 +47,9 @@ module.exports = {
 			})
 		})
 
-		try {
-			updates.checkForUpdates()
-		} catch (error) {}
+		// The "error" listener above settles this call; swallow the duplicate
+		// rejection so it cannot escalate into an uncaught exception.
+		Promise.resolve(updates.checkForUpdates()).catch(() => {})
 
 		try {
 			return await result
