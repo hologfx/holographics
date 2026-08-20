@@ -57,8 +57,7 @@
 				"codeSigningAccountName": "holographics",
 				"certificateProfileName": "holographics-ci-signing"
 			}
-		},
-		"afterAllArtifactBuild": "./tasks/afterAllArtifactBuild"
+		}
 	},
 	"ntl": {
 		"descriptions": {}
@@ -80,7 +79,7 @@
 		"build:notices": "node ./tasks/generate_notices",
 		"build:fonts": "rm ./src/client/public/google_fonts/google_fonts.css && ./tasks/generate_fonts.sh && node ./tasks/generate_fontlist.js",
 		"build:docker": "docker build -t holographics . && docker image prune -f",
-		"build:webpack": "npm run build:notices && npm run build:webpack:client && npm run build:webpack:nodejs && npm run build:webpack:electron && node ./tasks/generate_changelogs.js",
+		"build:webpack": "npm run build:notices && npm run build:webpack:client && npm run build:webpack:nodejs && npm run build:webpack:electron",
 		"build:webpack:client": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --hide-modules --mode production --config webpack.prod.js",
 		"build:webpack:nodejs": "webpack --hide-modules --mode production --config webpack.node.js",
 		"build:webpack:electron": "webpack --hide-modules --mode production --config webpack.electron.js",
@@ -89,19 +88,8 @@
 		"compile:distributable": "electron-builder -mw",
 		"test": "mocha --recursive --exit",
 		"test:generate_coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
-		"release:alpha:patch": "standard-version -a --release-as patch --prerelease alpha",
-		"release:beta:patch": "standard-version -a --release-as patch --prerelease beta",
-		"release:stable:patch": "standard-version -a --release-as patch",
-		"release:stable:minor": "standard-version -a --release-as minor",
 		"build_and_deploy": "electron-builder -mw --publish always",
-		"deploy": "git push --follow-tags origin master",
-		"changelog": "node ./tasks/app.js && git add CHANGELOG.md changelog.json",
 		"postinstall": "npm run build:clientsdk"
-	},
-	"standard-version": {
-		"skip": {
-			"changelog": true
-		}
 	},
 	"license": "AGPL-3.0-only",
 	"dependencies": {

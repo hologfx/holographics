@@ -2,11 +2,28 @@ name: Build/release
 
 on:
   push:
-    tags:
-      - "*"
+    branches: [master, beta]
 
 jobs:
-  release:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          target-branch: ${{ github.ref_name }}
+          config-file: ${{ github.ref_name == 'beta' && 'release-please-config-beta.json' || 'release-please-config.json' }}
+          manifest-file: ${{ github.ref_name == 'beta' && '.release-please-manifest-beta.json' || '.release-please-manifest.json' }}
+
+  build:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -69,12 +86,13 @@ jobs:
           $src.Replace($installProvider, 'exit 0').Replace($installModule, 'Import-Module TrustedSigning -ErrorAction Stop') | Set-Content $f
 
       - name: Build/release Electron app
-        # Build for the current runner's platform and, for v-tags, publish to GitHub
-        # Releases. electron-builder reads the signing certs from CSC_LINK/CSC_KEY_PASSWORD
-        # (base64 .p12) and notarizes natively via its built-in notarytool integration,
+        # Build for the current runner's platform and publish into the draft release
+        # release-please just created. electron-builder reads the signing certs from
+        # CSC_LINK/CSC_KEY_PASSWORD (base64 .p12) and notarizes natively via its
+        # built-in notarytool integration,
         # which expects APPLE_API_KEY (p8 path), APPLE_API_KEY_ID and APPLE_API_ISSUER.
         # (Replaces samuelmeuli/action-electron-builder, which ran on the removed node12 runtime.)
-        run: npx electron-builder --publish ${{ startsWith(github.ref, 'refs/tags/v') && 'always' || 'never' }}
+        run: npx electron-builder --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # macOS signs from a .p12 (CSC_LINK); Windows signs via Azure Trusted Signing (AZURE_* below).
@@ -86,7 +104,16 @@ jobs:
           # AZURE_CLIENT_CERTIFICATE_PATH is exported by the prepare step above (Windows only).
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          # Interim S3 dual-publish so existing (S3-era) installs keep auto-updating during the
-          # migration to GitHub Releases. Remove once all installs are on the GitHub feed.
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  publish:
+    needs: [release-please, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Publish the release
+        run: gh release edit "$TAG" --draft=false
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ needs.release-please.outputs.tag_name }}
