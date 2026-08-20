@@ -13,6 +13,10 @@ permissions:
 
 jobs:
   CLAAssistant:
+    # Skip release-please's own PRs. A bot PR never needs a signature, and the
+    # action locks every PR it sees on merge, which breaks release-please's
+    # post-release comment and aborts the release run.
+    if: ${{ !startsWith(github.event.pull_request.head.ref, 'release-please--') }}
     runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
