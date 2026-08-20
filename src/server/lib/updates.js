@@ -1,5 +1,4 @@
 const { EventEmitter } = require("events")
-const status = require("./status")
 const { Logger } = require("../lib/logging")
 const logging = new Logger("lib/updates")
 const settings = require("../lib/settings")
@@ -121,7 +120,6 @@ if (appMode.environment === "electron" && !appMode.development) {
 	updater.autoDownload = false
 	updater.autoInstallOnAppQuit = false
 	updater.allowDowngrade = true
-	updater.currentVersion = status.get().version
 }
 
 updater.setChannel = channel => {
