@@ -8,7 +8,8 @@
 		.row(v-else)
 			.col-md-6.mb-3
 				h2 Updates
-				p(v-if="!updates.newerVersionAvailable") You have the latest version on the {{ updatechannel | channelName }} channel.
+				p(v-if="updates.noReleases") No releases on the {{ updatechannel | channelName }} channel yet.
+				p(v-else-if="!updates.newerVersionAvailable") You have the latest version on the {{ updatechannel | channelName }} channel.
 				.alert.alert-primary(v-if="updates.newerVersionAvailable")
 					strong A new version is available!
 				p(v-if="updates.newerVersionAvailable") The latest version is {{ updates.updateInfo.version }}. You are running {{ currentVersion }}
@@ -31,7 +32,8 @@
 						el-radio(v-model="updatechannel" label="beta" border) Beta
 			.col-md-6
 				div#changelog
-					VueMarkdown(:source="updates.updateInfo.releaseNotes" :linkify="false")
+					VueMarkdown(v-if="updates.updateInfo.releaseNotes" :source="updates.updateInfo.releaseNotes" :linkify="false")
+					p.text-muted(v-else-if="!updates.checkingForUpdates") No release notes to show.
 </template>
 
 <script>
@@ -86,7 +88,6 @@ export default {
 #changelog {
 	height: 70vh;
 	overflow-y: scroll;
-	background: rgba(0, 0, 0, 1);
 
 	// Version number
 	h2 {

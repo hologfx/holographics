@@ -30,7 +30,7 @@ class ControllerError extends ApplicationError {
 			error.message || "An error occurred handling that request",
 			400,
 			"danger",
-			{ service }
+			{ service: service && service.name }
 		)
 	}
 }
@@ -42,7 +42,7 @@ class NotFoundError extends ApplicationError {
 				`The ${service.name} you requested could not be found`,
 				404,
 				"warning",
-				{ service }
+				{ service: service.name }
 			)
 		} else {
 			super("That resource was not found", 404, "warning")
@@ -63,8 +63,8 @@ class ThemeNotFoundError extends ApplicationError {
 }
 
 class UpdateError extends ApplicationError {
-	constructor() {
-		super("Error checking for updates", 500, "warning", {}, false)
+	constructor(msg) {
+		super(msg || "Error checking for updates", 500, "warning", {}, false)
 	}
 }
 

@@ -13,6 +13,7 @@ export default {
 			percent: 0
 		},
 		newerVersionAvailable: false,
+		noReleases: false,
 		readyToInstall: false,
 		newUpdateChannel: "latest"
 	},
@@ -43,6 +44,9 @@ export default {
 		setNewerVersionAvailable(state, isAvailable) {
 			state.newerVersionAvailable = isAvailable
 		},
+		setNoReleases(state, noReleases) {
+			state.noReleases = noReleases
+		},
 		setUpdateInfo(state, updateInfo) {
 			Vue.set(state, "updateInfo", updateInfo)
 		},
@@ -53,6 +57,7 @@ export default {
 	actions: {
 		async checkForUpdates({ commit }) {
 			commit("setNewerVersionAvailable", false)
+			commit("setNoReleases", false)
 			commit("setUpdateInfo", {})
 			commit("setCheckingForUpdates", true)
 			Holographics.once("error", () => {
@@ -62,6 +67,7 @@ export default {
 				commit("setCheckingForUpdates", false)
 				commit("setUpdateInfo", response.updateInfo || {})
 				commit("setNewerVersionAvailable", response.newer === true)
+				commit("setNoReleases", response.noReleases === true)
 			})
 		},
 		async downloadUpdate({ commit }) {

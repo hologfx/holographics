@@ -2,6 +2,19 @@ const updates = require("../lib/updates")
 const settings = require("../lib/settings")
 const { UpdateError } = require("../lib/errors")
 
+const EMPTY_CHANNEL_CODES = [
+	"ERR_UPDATER_LATEST_VERSION_NOT_FOUND",
+	"ERR_UPDATER_NO_PUBLISHED_VERSIONS"
+]
+
+function isChannelEmpty(error) {
+	if (!error) return false
+	if (EMPTY_CHANNEL_CODES.includes(error.code)) return true
+	// GitHubProvider re-wraps the 404 from /releases/latest as ERR_UPDATER_INVALID_RELEASE_FEED,
+	// so the original cause survives only in the message.
+	return /please ensure a production release exists/.test(error.message || "")
+}
+
 module.exports = {
 	emitter: updates,
 	events: {
@@ -25,9 +38,7 @@ module.exports = {
 		updates.setChannel(settings.get("updates").value().channel)
 
 		const result = new Promise((resolve, reject) => {
-			updates.once("error", updateInfo => {
-				reject()
-			})
+			updates.once("error", reject)
 			updates.once("update-not-available", updateInfo => {
 				resolve({ newer: false, updateInfo })
 			})
@@ -43,7 +54,8 @@ module.exports = {
 		try {
 			return await result
 		} catch (e) {
-			throw new UpdateError()
+			if (isChannelEmpty(e)) return { newer: false, updateInfo: {}, noReleases: true }
+			throw new UpdateError(e && e.message)
 		}
 	},
 	async download() {
