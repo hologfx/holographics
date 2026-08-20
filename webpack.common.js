@@ -5,15 +5,11 @@ const CopyPlugin = require("copy-webpack-plugin")
 
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin")
 const fs = require("fs")
-const semver = require("semver")
 
-// The Updates page shows the whole history for the running build's channel, the
-// way the old generated release-notes.md did. release-please keeps a changelog
-// per channel; pick the one matching this build and inline it.
-const prerelease = semver.prerelease(require("./package.json").version)
-const changelogFile = prerelease ? `CHANGELOG-${prerelease[0]}.md` : "CHANGELOG.md"
-const changelog = fs.existsSync(changelogFile)
-	? fs.readFileSync(changelogFile, "utf8")
+// The Updates page shows the whole history, the way the old generated
+// release-notes.md did.
+const changelog = fs.existsSync("CHANGELOG.md")
+	? fs.readFileSync("CHANGELOG.md", "utf8")
 	: ""
 const smp = new SpeedMeasurePlugin()
 

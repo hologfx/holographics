@@ -17,7 +17,7 @@ jobs:
     # action locks every PR it sees closed, which breaks release-please's
     # post-release comment and aborts the release.
     # For pull_request_target GitHub reads this file from the DEFAULT branch, not
-    # from the PR's base, so this guard only takes effect once it is on master.
+    # from the PR's base, so this guard only takes effect once it is on main.
     if: ${{ !startsWith(github.head_ref, 'release-please--') }}
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path-to-signatures: ".github/cla-signatures.json"
-          path-to-document: "https://github.com/hologfx/holographics/blob/master/.github/CLA.md"
+          path-to-document: "https://github.com/hologfx/holographics/blob/main/.github/CLA.md"
           # Signatures live off the default branch so the action never needs a
           # bypass on it: the ruleset covers ~DEFAULT_BRANCH only.
           branch: "cla-signatures"

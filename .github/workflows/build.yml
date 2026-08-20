@@ -2,7 +2,14 @@ name: Build/release
 
 on:
   push:
-    branches: [master, beta]
+    branches: [main]
+  # Graduating a prerelease to stable: run this with the version to release as,
+  # e.g. 1.12.0. It rewrites the pending release PR rather than releasing directly.
+  workflow_dispatch:
+    inputs:
+      release-as:
+        description: "Graduate the pending release PR to this exact version, e.g. 1.12.0"
+        required: true
 
 jobs:
   release-please:
@@ -23,8 +30,6 @@ jobs:
         with:
           skip-github-pull-request: true
           target-branch: ${{ github.ref_name }}
-          config-file: ${{ github.ref_name == 'beta' && 'release-please-config-beta.json' || 'release-please-config.json' }}
-          manifest-file: ${{ github.ref_name == 'beta' && '.release-please-manifest-beta.json' || '.release-please-manifest.json' }}
 
   build:
     needs: release-please
@@ -142,5 +147,4 @@ jobs:
         with:
           skip-github-release: true
           target-branch: ${{ github.ref_name }}
-          config-file: ${{ github.ref_name == 'beta' && 'release-please-config-beta.json' || 'release-please-config.json' }}
-          manifest-file: ${{ github.ref_name == 'beta' && '.release-please-manifest-beta.json' || '.release-please-manifest.json' }}
+          release-as: ${{ inputs.release-as }}
