@@ -31,5 +31,7 @@ jobs:
         with:
           path-to-signatures: ".github/cla-signatures.json"
           path-to-document: "https://github.com/hologfx/holographics/blob/master/.github/CLA.md"
-          branch: "master"
+          # Signatures live off the default branch so the action never needs a
+          # bypass on it: the ruleset covers ~DEFAULT_BRANCH only.
+          branch: "cla-signatures"
           allowlist: "florisporro,dependabot[bot],*[bot]"
