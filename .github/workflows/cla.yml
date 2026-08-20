@@ -3,7 +3,7 @@ on:
   issue_comment:
     types: [created]
   pull_request_target:
-    types: [opened, closed, synchronize]
+    types: [opened, synchronize]
 
 permissions:
   actions: write
@@ -13,10 +13,11 @@ permissions:
 
 jobs:
   CLAAssistant:
-    # Skip release-please's own PRs. A bot PR never needs a signature, and the
-    # action locks every PR it sees on merge, which breaks release-please's
-    # post-release comment and aborts the release run.
-    if: ${{ !startsWith(github.event.pull_request.head.ref, 'release-please--') }}
+    # The action locks every PR it sees closed, which breaks release-please's
+    # post-release comment and aborts the release. Signatures only matter while a
+    # PR is open, so the closed event is dropped above rather than relying on this
+    # guard, which did not skip the job on PR #3.
+    if: ${{ !startsWith(github.head_ref, 'release-please--') }}
     runs-on: ubuntu-latest
     steps:
       - name: "CLA Assistant"
