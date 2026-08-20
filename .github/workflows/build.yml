@@ -99,7 +99,7 @@ jobs:
           CSC_LINK: ${{ runner.os == 'macOS' && secrets.MAC_CERTS || '' }}
           CSC_KEY_PASSWORD: ${{ runner.os == 'macOS' && secrets.MAC_CERTS_PASSWORD || '' }}
           APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
-          APPLE_API_ISSUER: ${{ secrets.APPLE_API_KEY_ISSUER_ID }}
+          APPLE_API_ISSUER: ${{ secrets.APPLE_API_KEY_ISSUER }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           # AZURE_CLIENT_CERTIFICATE_PATH is exported by the prepare step above (Windows only).
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
