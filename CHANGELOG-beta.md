@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0-beta.8](https://github.com/hologfx/holographics/compare/v1.12.0-beta.7...v1.12.0-beta.8) (2026-08-20)
+
+
+### Bug Fixes
+
+* **ci:** skip the CLA action on release-please pull requests ([f9f211c](https://github.com/hologfx/holographics/commit/f9f211cdb416810c62aa9a221d0721f9de54970f))
+
 ## [1.12.0-beta.7](https://github.com/hologfx/holographics/compare/v1.12.0-beta.6...v1.12.0-beta.7) (2026-08-20)
 
 
