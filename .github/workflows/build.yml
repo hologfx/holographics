@@ -14,22 +14,17 @@ jobs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
+      # Release only. release-please cannot see its own draft release, so if it
+      # opened the next release PR in this same run it would conclude nothing had
+      # shipped and re-propose the whole history. The release-pr job below does
+      # that half, once publish has made the release visible.
       - uses: googleapis/release-please-action@v4
         id: release
         with:
+          skip-github-pull-request: true
           target-branch: ${{ github.ref_name }}
           config-file: ${{ github.ref_name == 'beta' && 'release-please-config-beta.json' || 'release-please-config.json' }}
           manifest-file: ${{ github.ref_name == 'beta' && '.release-please-manifest-beta.json' || '.release-please-manifest.json' }}
-
-      # A draft release creates no git tag, and release-please decides what is already
-      # released by looking for tags. Without this, a failed build leaves no tag and the
-      # next run re-proposes the same commits under a bumped version, forever.
-      - name: Tag the release
-        if: steps.release.outputs.release_created == 'true'
-        run: gh api "repos/$GITHUB_REPOSITORY/git/refs" -f ref="refs/tags/$TAG" -f sha="$GITHUB_SHA"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ steps.release.outputs.tag_name }}
 
   build:
     needs: release-please
@@ -127,3 +122,25 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           TAG: ${{ needs.release-please.outputs.tag_name }}
+
+  # Opens or refreshes the release PR. Gated so it only runs when there is no
+  # release in flight, or when publish has already made one visible: a release
+  # left drafted by a failed build must not trigger a re-proposal of history.
+  release-pr:
+    needs: [release-please, publish]
+    if: >-
+      always() &&
+      needs.release-please.result == 'success' &&
+      (needs.release-please.outputs.release_created != 'true' ||
+       needs.publish.result == 'success')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          skip-github-release: true
+          target-branch: ${{ github.ref_name }}
+          config-file: ${{ github.ref_name == 'beta' && 'release-please-config-beta.json' || 'release-please-config.json' }}
+          manifest-file: ${{ github.ref_name == 'beta' && '.release-please-manifest-beta.json' || '.release-please-manifest.json' }}
