@@ -23,7 +23,6 @@
 		"npmRebuild": false,
 		"compression": "normal",
 		"extraResources": [],
-		"generateUpdatesFilesForAllChannels": true,
 		"files": [
 			"dist/",
 			"dist/**/node_modules/**/*",
